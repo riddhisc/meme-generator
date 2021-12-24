@@ -9,7 +9,7 @@ To run this project on your computer <br><br>
 5. Then run command `npm start`<br><br>
 6. The project will open on the browser with localhost:3000<br>
 
-The Project url - https://avinash201199.github.io/MemeGenerator/ <br>
+
 
 <hr>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
