@@ -1,82 +1,34 @@
-# Getting Started with Create React App
+# MemeGen
 
-To run this project on your computer <br><br>
+A meme maker **and sticker maker** built with React 18 + Vite. Everything is rendered in your browser with the Canvas API, so there is no account, API key or backend.
 
-1. Fork <br>
-2. Clone the project or download zip file and extract.<br>
-3. Install node js -https://nodejs.org/en/download/ <br>
-4. Open project folder on Vscode and run command `npm install`  on terminal of vs code<br>
-5. Then run command `npm start`<br><br>
-6. The project will open on the browser with localhost:3000<br>
+## Features
+- **Redesigned UI**: clean light interface, simple hero, bento home screen, hover-lift template cards
+- **Sticker maker**: upload a photo and cut out the part you want with a freehand lasso, a box, or the "erase colour" wand (flood-fill with adjustable tolerance). Add an optional white sticker border and export a transparent PNG.
+- **Sticker library**: stickers are saved in your browser (localStorage) and can be reused in any meme.
+- **Meme editor**: ~100 live Imgflip templates with search, your own upload, paste from the clipboard, or a blank canvas.
+- **Layers**: captions and stickers are movable objects. Drag, resize, rotate, flip, reorder forward/back, delete.
+- **Navigation**: a Back button on every screen (also Esc, and the browser/phone back button via the History API), and the logo returns Home.
+- **Suggestions**: suggested memes (template + ready-made caption), recommendations based on what you use, popular templates, and 25+ caption ideas by category.
+- Download PNG or copy to clipboard. Responsive and touch friendly. Auto-deploys to GitHub Pages.
 
+## Privacy
+- No accounts, no backend, no analytics. Photos, stickers and memes are processed in your browser and never uploaded.
+- Saved stickers, recent memes and template usage live in this browser's `localStorage`, on this device only. Another laptop (or browser) sees none of it.
+- **History** screen: view recent memes and **Clear history**, **Delete my stickers** or **Erase everything** at any time.
+- Production builds ship a Content-Security-Policy that only allows requests to Imgflip (template list and images), plus `no-referrer`.
 
+## Run locally
+```bash
+npm install
+npm run dev
+```
 
-<hr>
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Build / deploy
+`npm run build` outputs to `dist/`. Pushing to `main` runs the included GitHub Actions workflow (Settings → Pages → Source: *GitHub Actions*).
 
-## Available Scripts
+## Tech
+React 18, Vite, Canvas API (clip paths, compositing, flood fill), Pointer Events, History API, plain CSS.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Roadmap
+TypeScript migration, AI background removal, undo/redo, text shadow and font picker, animated GIF stickers.
